@@ -6,11 +6,12 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import tr.gov.gib.taskman.dto.TaskDto;
 import tr.gov.gib.taskman.service.TaskService;
+import tr.gov.gib.taskman.util.ApiPath;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/tasks")
+@RequestMapping(ApiPath.TaskCtrl.CTRL)
 public class TaskController {
 
     private final TaskService taskService;
