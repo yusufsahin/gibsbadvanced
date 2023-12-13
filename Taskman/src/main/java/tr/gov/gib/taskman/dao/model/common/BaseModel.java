@@ -1,9 +1,6 @@
 package tr.gov.gib.taskman.dao.model.common;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.MappedSuperclass;
-import jakarta.persistence.Temporal;
-import jakarta.persistence.TemporalType;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.data.annotation.CreatedBy;
@@ -36,5 +33,10 @@ public abstract class BaseModel {
     @Column(name = "ModifiedAt")
     private Date modifiedAt;
 
+    @Column(name = "IsDeleted")
+    private Boolean isDeleted=false;
 
+    @Version
+    @Column(name = "Version")
+    private int version;
 }
