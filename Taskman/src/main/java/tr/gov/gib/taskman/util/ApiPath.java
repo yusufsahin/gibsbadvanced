@@ -10,4 +10,8 @@ public class ApiPath {
     public static final class  WorkitemCtrl{
         public  static final String CTRL=BASE_PATH+"/workitems";
     }
+
+    public static final class  ProjectCtrl{
+        public  static final String CTRL=BASE_PATH+"/projects";
+    }
 }
