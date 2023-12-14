@@ -6,4 +6,8 @@ public class ApiPath {
     public static final class  TaskCtrl{
         public  static final String CTRL=BASE_PATH+"/tasks";
     }
+
+    public static final class  WorkitemCtrl{
+        public  static final String CTRL=BASE_PATH+"/workitems";
+    }
 }
