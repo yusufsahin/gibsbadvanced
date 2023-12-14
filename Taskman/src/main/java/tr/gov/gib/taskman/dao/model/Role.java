@@ -1,10 +1,7 @@
 package tr.gov.gib.taskman.dao.model;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.NonNull;
+import lombok.*;
 import org.hibernate.annotations.SQLDelete;
 import org.hibernate.annotations.Where;
 import tr.gov.gib.taskman.dao.model.common.BaseModel;
@@ -17,6 +14,7 @@ import java.util.Collection;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 @Where(clause = "isdeleted='false'")
 @SQLDelete(sql = "UPDATE roles SET isdeleted = true WHERE id = ? and version = ?")
 public class Role extends BaseModel {

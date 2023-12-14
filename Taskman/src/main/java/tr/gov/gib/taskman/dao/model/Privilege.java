@@ -2,6 +2,7 @@ package tr.gov.gib.taskman.dao.model;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.SQLDelete;
@@ -15,7 +16,7 @@ import java.util.Collection;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-
+@Builder
 @Where(clause = "isdeleted='false'")
 @SQLDelete(sql = "UPDATE privileges SET isdeleted = true WHERE id = ? and version = ?")
 
