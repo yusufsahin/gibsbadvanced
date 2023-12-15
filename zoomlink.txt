@@ -2,3 +2,6 @@ https://us06web.zoom.us/j/83683488723?pwd=F3EKL9cCkKu6Jbq7ZFjMHgUwjueHlY.1
 
 
 docker run --name some-postgres -e POSTGRES_PASSWORD=mysecretpassword -p 5432:5432 -d postgres
+
+
+docker run --name some-mongo -p 27017:27017 -d mongo:latest
