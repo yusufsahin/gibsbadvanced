@@ -18,4 +18,7 @@ public class ApiPath {
     public static final class  AuthCtrl{
         public  static final String CTRL=BASE_PATH+"/auth";
     }
+    public static final class  NoteCtrl{
+        public  static final String CTRL=BASE_PATH+"/notes";
+    }
 }
