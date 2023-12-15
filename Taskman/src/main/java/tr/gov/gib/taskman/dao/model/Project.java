@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 
 import org.hibernate.annotations.SQLDelete;
 import org.hibernate.annotations.Where;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import tr.gov.gib.taskman.dao.model.common.BaseModel;
 
 import java.util.List;
@@ -18,6 +19,8 @@ import java.util.List;
 @AllArgsConstructor
 @Where(clause = "isdeleted='false'")
 @SQLDelete(sql="UPDATE  projects SET  isdeleted=true WHERE id=? and version=?")
+@EntityListeners(AuditingEntityListener.class)
+
 public class Project extends BaseModel {
 
     @Id

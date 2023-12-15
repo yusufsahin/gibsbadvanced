@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.SQLDelete;
 import org.hibernate.annotations.Where;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import tr.gov.gib.taskman.dao.model.common.BaseModel;
 
 import java.util.Collection;
@@ -17,6 +18,7 @@ import java.util.Collection;
 @Builder
 @Where(clause = "isdeleted='false'")
 @SQLDelete(sql = "UPDATE roles SET isdeleted = true WHERE id = ? and version = ?")
+@EntityListeners(AuditingEntityListener.class)
 public class Role extends BaseModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

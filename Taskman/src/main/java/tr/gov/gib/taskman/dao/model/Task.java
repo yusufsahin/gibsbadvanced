@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.SQLDelete;
 import org.hibernate.annotations.Where;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import tr.gov.gib.taskman.dao.model.common.BaseModel;
 import tr.gov.gib.taskman.enumerate.TaskStatus;
 import tr.gov.gib.taskman.enumerate.converter.TaskStatusConverter;
@@ -17,6 +18,7 @@ import tr.gov.gib.taskman.enumerate.converter.TaskStatusConverter;
 @AllArgsConstructor
 @Where(clause = "isdeleted='false'")
 @SQLDelete(sql = "UPDATE tasks SET isdeleted=true WHERE id=? and version=?")
+@EntityListeners(AuditingEntityListener.class)
 public class Task extends BaseModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

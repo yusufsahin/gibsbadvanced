@@ -13,6 +13,7 @@ import java.util.Date;
 @Getter
 @Setter
 @MappedSuperclass
+@EntityListeners(EntityListeners.class)
 public abstract class BaseModel {
 
     @CreatedBy

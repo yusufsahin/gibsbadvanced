@@ -10,6 +10,7 @@ import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 import org.hibernate.annotations.SQLDelete;
 import org.hibernate.annotations.Where;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import tr.gov.gib.taskman.dao.model.common.BaseModel;
 
 import java.util.Date;
@@ -27,7 +28,7 @@ import java.util.Date;
 // refresh token için gerekli mi?
 @Where(clause = "isdeleted='false'")
 @SQLDelete(sql = "UPDATE projects SET isdeleted = true WHERE id = ? and version = ?")
-
+@EntityListeners(AuditingEntityListener.class)
 public class RefreshToken extends BaseModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
